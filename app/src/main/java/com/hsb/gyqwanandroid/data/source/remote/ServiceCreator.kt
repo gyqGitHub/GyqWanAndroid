@@ -3,6 +3,7 @@ package com.hsb.gyqwanandroid.data.source.remote
 import com.hsb.gyqwanandroid.util.loge
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import okhttp3.logging.LoggingEventListener
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
@@ -24,6 +25,7 @@ object ServiceCreator {
         .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
         .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)
         .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+        .eventListenerFactory(LoggingEventListener.Factory())
         .addInterceptor(HttpLoggingInterceptor(HttpLoggingInterceptor.Logger {
             loge(it)
         }).apply {

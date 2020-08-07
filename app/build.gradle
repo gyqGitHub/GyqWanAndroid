@@ -82,4 +82,7 @@ dependencies {
 //    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
 //    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 //    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    //弹框显示，解决系统Toast在关闭通知权限后不显示问题
+    implementation 'com.hjq:toast:8.6'
 }
