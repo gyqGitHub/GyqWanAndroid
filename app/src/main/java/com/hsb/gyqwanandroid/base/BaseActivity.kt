@@ -7,7 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
  * @author gyq
  * @date 2020/7/29
  */
-abstract class BaseActivity : AppCompatActivity(){
+abstract class BaseActivity: AppCompatActivity(){
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layoutId())
