@@ -4,6 +4,7 @@ import com.hsb.gyqwanandroid.data.Result
 import com.hsb.gyqwanandroid.data.model.BaseResponse
 import com.hsb.gyqwanandroid.data.model.LoginData
 import com.hsb.gyqwanandroid.data.source.remote.api.WanAndroidService
+import com.hsb.gyqwanandroid.util.extension.result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.await
@@ -18,8 +19,7 @@ class LoginDataSource {
     private val wanAndroidService = ServiceCreator.create(WanAndroidService::class.java)
 
     suspend fun login(username: String, password: String): Result<BaseResponse<LoginData>> {
-        val response = wanAndroidService.getLoginData(username, password).await()
-        return if(response.isSuccess()) Result.Success(response) else Result.Error(RuntimeException(response.errorMsg))
+        return wanAndroidService.getLoginData(username, password).await().result()
     }
 
     fun logout() {

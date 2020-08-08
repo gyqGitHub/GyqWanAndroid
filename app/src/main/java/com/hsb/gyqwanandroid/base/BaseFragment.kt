@@ -12,13 +12,13 @@ import androidx.fragment.app.Fragment
  * @author gyq
  * @date 2020/8/6
  */
-abstract class BaseFragment :Fragment(){
+abstract class BaseFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(getLayoutId(),container,false)
+        return inflater.inflate(getLayoutId(), container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,11 +30,11 @@ abstract class BaseFragment :Fragment(){
     @LayoutRes
     abstract fun getLayoutId(): Int
 
-    fun initView(){
+    open fun initView() {
 
     }
 
-    fun initData(){
+    open fun initData() {
 
     }
 }
