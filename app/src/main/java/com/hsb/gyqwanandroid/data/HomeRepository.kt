@@ -1,7 +1,7 @@
 package com.hsb.gyqwanandroid.data
 
 import com.hsb.gyqwanandroid.data.model.Article
-import com.hsb.gyqwanandroid.data.model.Banner
+import com.hsb.gyqwanandroid.data.model.BannerData
 import com.hsb.gyqwanandroid.data.model.BaseResponse
 import com.hsb.gyqwanandroid.data.model.PageResponse
 import com.hsb.gyqwanandroid.data.source.remote.HomeDataSource
@@ -16,7 +16,7 @@ class HomeRepository(private val homeDataSource: HomeDataSource) {
         return homeDataSource.getArticleList(page)
     }
 
-    suspend fun getBannerList():Result<BaseResponse<List<Banner>>>{
+    suspend fun getBannerList():Result<BaseResponse<List<BannerData>>>{
         return homeDataSource.getBannerList()
     }
 }

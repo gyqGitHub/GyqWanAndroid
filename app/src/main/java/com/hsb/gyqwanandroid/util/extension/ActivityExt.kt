@@ -2,6 +2,7 @@ package com.hsb.gyqwanandroid.util.extension
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
@@ -32,3 +33,6 @@ fun AppCompatActivity.showToast(msg:String, gravity: Int = Gravity.CENTER){
 inline fun <reified T : ViewModel> AppCompatActivity.obtainViewModel(viewModelFactory: ViewModelProvider.Factory) =
     ViewModelProviders.of(this, viewModelFactory).get(T::class.java)
 
+fun AppCompatActivity.log(msg:Any?,tag:String = "gyq"){
+    Log.e(tag,msg.toString())
+}

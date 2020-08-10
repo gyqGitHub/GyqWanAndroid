@@ -19,5 +19,5 @@ interface WanAndroidService {
     fun getArticleList(@Path("page")page:Int):Call<BaseResponse<PageResponse<Article>>>
 
     @GET("banner/json")
-    fun getBannerList():Call<BaseResponse<List<Banner>>>
+    fun getBannerList():Call<BaseResponse<List<BannerData>>>
 }

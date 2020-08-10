@@ -17,7 +17,6 @@ class MainActivity : BaseActivity() {
         super.initView()
         switchFragment(-1, R.id.menu_main)
         bottom_navigate.setOnNavigationItemSelectedListener {
-            showToast(it.title.toString())
             switchFragment(bottom_navigate.selectedItemId, it.itemId)
             return@setOnNavigationItemSelectedListener true
         }

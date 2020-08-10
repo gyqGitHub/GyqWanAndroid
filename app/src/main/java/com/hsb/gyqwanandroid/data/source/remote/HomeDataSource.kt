@@ -2,7 +2,7 @@ package com.hsb.gyqwanandroid.data.source.remote
 
 import com.hsb.gyqwanandroid.data.Result
 import com.hsb.gyqwanandroid.data.model.Article
-import com.hsb.gyqwanandroid.data.model.Banner
+import com.hsb.gyqwanandroid.data.model.BannerData
 import com.hsb.gyqwanandroid.data.model.BaseResponse
 import com.hsb.gyqwanandroid.data.model.PageResponse
 import com.hsb.gyqwanandroid.data.source.remote.api.WanAndroidService
@@ -21,7 +21,7 @@ class HomeDataSource {
         return wanAndroidService.getArticleList(page).await().result()
     }
 
-    suspend fun getBannerList():Result<BaseResponse<List<Banner>>>{
+    suspend fun getBannerList():Result<BaseResponse<List<BannerData>>>{
         return wanAndroidService.getBannerList().await().result()
     }
 }
